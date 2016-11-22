@@ -89,12 +89,9 @@ func (c *cachedLoader) compileKeyValues(data map[string]interface{}, prefix stri
 			}
 		} else {
 			//for other types json marshal will turn then into string byte slice for storage
-			j, err := json.Marshal(v)
-			if err != nil {
-				return nil, err
-			}
+			j := fmt.Sprintf("%v", v)
 
-			result[c.qualify(prefix, k)] = j
+			result[c.qualify(prefix, k)] = []byte(j)
 		}
 	}
 	return result, nil

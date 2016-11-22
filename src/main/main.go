@@ -6,7 +6,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/divideandconquer/go-consul-client/src/client"
+	"github.com/samifruit514/go-consul-client/src/client"
 )
 
 var filepath = flag.String("file", "", "the path to the json file")

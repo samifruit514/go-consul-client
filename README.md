@@ -1,4 +1,5 @@
 # go-consul-client
+# THIS FORK DOES NOT WRAP VALUES WITH DOUBLE QUOTES
 A consul library that can load json into consul KV and read a consul KV namespace into a config cache.  
 This repo provides both an application capable of importing JSON into consul key values as well as a library
 for using consul as a configuration store for golang applications.
@@ -8,8 +9,6 @@ strings, ints, booleans, and durations.
 
 ## Usage
 
-### Application
-The easiest way to use this application is as a docker container which has been made available through [docker hub](https://hub.docker.com/r/divideandconquer/go-consul-client/):
 
 ```bash
 docker run -v /path/to/json/file:/config.json divideandconquer/go-consul-client  -file /config.json -namespace testing/fun -consul 172.17.8.101:8500
@@ -22,7 +21,7 @@ You can import this library into you golang application and then use it to acces
 
 ```golang
 
-import "github.com/divideandconquer/go-consul-client/src/client"
+import "github.com/samifruit514/go-consul-client/src/client"
 
 
 func main() {
